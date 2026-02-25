@@ -2,6 +2,21 @@
 Double precision floating point multiplication in IEEE-754 format.
 
 ---
+## Description
+
+
+## Project Attributes
+
+
+## Features
+
+
+## Possible Operation
+
+
+
+
+
 
 ### Schematic
 <img width="998" height="778" alt="image" src="https://github.com/user-attachments/assets/837f28d1-0d44-4b00-b3b9-5e9fac2be530" />
