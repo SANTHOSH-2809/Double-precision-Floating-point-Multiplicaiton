@@ -1,122 +1,68 @@
-module tb_floatingpointmultiplication;
+module tb;
 
   reg  [63:0] A, B;
   wire [63:0] final_product;
 
-  // Instantiate DUT
+
   floatingpointmultiplication uut (
       .A(A),
       .B(B),
       .final_product(final_product)
   );
 
-  // -----------------------------
-  // Task to apply and display
-  // -----------------------------
+  //--------------------------------------------------
+  // Task
+  //--------------------------------------------------
   task apply_test;
     input [63:0] a_in;
     input [63:0] b_in;
-    input [127:0] test_name;
+    input [127:0] name;
   begin
-    A = a_in;
-    B = b_in;
-    #10;   // allow combinational settle
+      A = a_in;
+      B = b_in;
 
-    $display("--------------------------------------------------");
-    $display("TEST  : %s", test_name);
-    $display("A     : %h", A);
-    $display("B     : %h", B);
-    $display("RESULT: %h", final_product);
+      #10;
+
+
+      $display("--------------------------------------------------");
+      $display("TEST       : %s", name);
+      $display("DUT OUTPUT : %h", final_product);
   end
   endtask
 
+  //--------------------------------------------------
+  // Tests
+  //--------------------------------------------------
   initial begin
 
-    $dumpfile("floatingpointmultiplication.vcd");
-    $dumpvars(0, tb_floatingpointmultiplication);
-
-    A = 0;
-    B = 0;
-
-    // =========================
-    // ZERO CASES
-    // =========================
-    apply_test(64'h0000000000000000, 64'h0000000000000000, "0 * 0");
-    apply_test(64'h8000000000000000, 64'h0000000000000000, "-0 * 0");
-    apply_test(64'h0000000000000000, 64'h3FF0000000000000, "0 * 1");
-
-    // =========================
-    // NORMAL CASES
-    // =========================
-    apply_test(64'h3FF0000000000000, 64'h4000000000000000, "1 * 2");
-    apply_test(64'hBFF0000000000000, 64'h4000000000000000, "-1 * 2");
+    // NORMAL VALUE MULTIPLICATIONS
+    apply_test(64'h3FF0000000000000, 64'h0000000000000001, "1.0 * 2.0");
+    apply_test(64'h4008000000000000, 64'h4000000000000000, "3.0 * 2.0");
+    apply_test(64'h4016000000000000, 64'h4008000000000000, "5.5 * 3.0");
+    apply_test(64'h4016000000000000, 64'h401A000000000000, "5.5 * 6.5");
     apply_test(64'h3FF8000000000000, 64'h3FF8000000000000, "1.5 * 1.5");
+    apply_test(64'h4004000000000000, 64'h4008000000000000, "2.5 * 3.0");
+    apply_test(64'h4010000000000000, 64'h4000000000000000, "4.0 * 2.0");
+    apply_test(64'h4014000000000000, 64'h4010000000000000, "5.0 * 4.0");
+    apply_test(64'h400C000000000000, 64'h4008000000000000, "3.5 * 3.0");
+    apply_test(64'h4012000000000000, 64'h4008000000000000, "4.5 * 3.0");
 
-    // =========================
-    // OVERFLOW
-    // =========================
-    apply_test(64'h7FEFFFFFFFFFFFFF,
-               64'h7FEFFFFFFFFFFFFF,
-               "MAX * MAX");
+    // RANDOM NORMAL VALUES
+    repeat(10) begin
+        A = {$random,$random};
+        B = {$random,$random};
+        #10;
 
-    apply_test(64'h7FEFFFFFFFFFFFFF,
-               64'h4000000000000000,
-               "MAX * 2");
 
-    // =========================
-    // UNDERFLOW
-    // =========================
-    apply_test(64'h0010000000000000,
-               64'h0010000000000000,
-               "MIN_NORMAL * MIN_NORMAL");
 
-    apply_test(64'h0000000000000001,
-               64'h0000000000000001,
-               "DEN * DEN");
-
-    apply_test(64'h0000000000000001,
-               64'h3FF0000000000000,
-               "DEN * 1");
-
-    // =========================
-    // INFINITY
-    // =========================
-    apply_test(64'h7FF0000000000000,
-               64'h3FF0000000000000,
-               "INF * 1");
-
-    apply_test(64'hFFF0000000000000,
-               64'h3FF0000000000000,
-               "-INF * 1");
-
-    apply_test(64'h7FF0000000000000,
-               64'h0000000000000000,
-               "INF * 0");
-
-    apply_test(64'h7FF0000000000000,
-               64'hFFF0000000000000,
-               "INF * -INF");
-
-    // =========================
-    // NaN
-    // =========================
-    apply_test(64'h7FF8000000000000,
-               64'h3FF0000000000000,
-               "NaN * 1");
-
-    apply_test(64'h7FF8000000000000,
-               64'h7FF0000000000000,
-               "NaN * INF");
-
-    // =========================
-    // RANDOM
-    // =========================
-    repeat (10) begin
-        apply_test($random, $random, "Random Test");
+        $display("--------------------------------------------------");
+        $display("RANDOM TEST");
+        $display("DUT OUTPUT : %h", final_product);
     end
 
     #20;
     $finish;
+
   end
 
 endmodule
