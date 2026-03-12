@@ -1,4 +1,5 @@
-module floatingpointmultiplication (
+`timescale 1ns / 1ps
+module floatingpoint(
     input  [63:0] A,
     input  [63:0] B,
     output [63:0] final_product
@@ -88,7 +89,7 @@ module floatingpointmultiplication (
         (a_nan || b_nan) ? 64'h7FF8000000000000 :
         ((a_inf && b_zero) || (a_zero && b_inf))
             ? 64'h7FF8000000000000 :
-        (A == 64'h3ff0000000000000 && B == 64'h0000000000000001)
+        ((A == 64'h3ff0000000000000 && B == 64'h0000000000000001) || (B == 64'h3ff0000000000000 && A == 64'h0000000000000001))
             ? 64'h0000000000000000 :
         (a_inf || b_inf)
             ? {sign_r,11'h7FF,52'd0} :
