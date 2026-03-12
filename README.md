@@ -19,19 +19,17 @@ Double precision floating point multiplication in IEEE-754 format.
 
 
 ### Schematic
-<img width="998" height="778" alt="image" src="https://github.com/user-attachments/assets/837f28d1-0d44-4b00-b3b9-5e9fac2be530" />
-<img width="1556" height="455" alt="image" src="https://github.com/user-attachments/assets/d8ba73eb-8056-4593-9cd8-6a44f24c5416" />
+<img width="1551" height="441" alt="image" src="https://github.com/user-attachments/assets/a1a1518c-dc29-45fc-9787-b2a3a1bc2f55" />
+<img width="1114" height="772" alt="image" src="https://github.com/user-attachments/assets/ae3e6371-3006-4fb7-86d1-7c2dd94fe1a8" />
 
 ### design_wrapper
-<img width="863" height="320" alt="image" src="https://github.com/user-attachments/assets/f9f3be38-733d-41b3-8ea7-371e156c12f6" />
+<img width="764" height="271" alt="image" src="https://github.com/user-attachments/assets/83088c32-82af-4f91-a5ee-3ef403029cda" />
 
 ### Power Summary
-<img width="1219" height="465" alt="image" src="https://github.com/user-attachments/assets/08d1ac62-a640-4296-a00a-e63bfc44dd83" />
+<img width="1604" height="495" alt="image" src="https://github.com/user-attachments/assets/b0057455-674c-4af9-9d6d-d72e6c88ccbe" />
 
 ### Timing
-<img width="1601" height="480" alt="Screenshot 2026-02-25 170343" src="https://github.com/user-attachments/assets/fbe7748f-4b26-4c58-a0d9-2e397ce51680" />
+<img width="1582" height="508" alt="image" src="https://github.com/user-attachments/assets/0c29c05a-2dc7-4662-b083-4699bd3207b4" />
 
-### IO Ports 
-<img width="1600" height="451" alt="Screenshot 2026-02-25 170535" src="https://github.com/user-attachments/assets/4a4f449e-9d32-46cf-8ccb-2cf81607d92e" />
 
 
