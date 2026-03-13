@@ -90,6 +90,9 @@ The architecture also handles special floating-point values such as NaN, Infinit
 
 <img width="838" height="450" alt="image" src="https://github.com/user-attachments/assets/60ea1693-dc09-43e4-9df6-cbee60961a0f" />
 
+[Demo video](https://drive.google.com/file/d/109JcUdwhV3lv-jsfLOvnb3OAdQbGQAIu/view?usp=sharing)
+
+
 ### Schematic
 <img width="1172" height="468" alt="image" src="https://github.com/user-attachments/assets/3f241eb7-cf8d-4226-b7cf-75886e328b5d" />
 <img width="1121" height="786" alt="image" src="https://github.com/user-attachments/assets/ec9c5f23-41a6-408e-8c77-741fc689c00f" />
