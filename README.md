@@ -69,6 +69,22 @@ The architecture also handles special floating-point values such as NaN, Infinit
 | Overflow case  | Any       | Infinity           |
 | Underflow case | Any       | Zero               |
 
+## Range in Magnitude
+
+| Result magnitude                                | Output                    |
+| ----------------------------------------------- | ------------------------- |
+| `2^-1022` ≤ result ≤ `1.7976931348623157 × 10^308` | correct normalized number |
+| `< 2^-1022`                                     | **0 (flush-to-zero)**     |
+| `> 1.7976931348623157 × 10^308`                 | **Infinity (overflow)**   |
+
+## 
+
+| Result magnitude                                 | Output                    |
+| ------------------------------------------------ | ------------------------- |
+| `0010000000000000` ≤ result ≤ `7FEFFFFFFFFFFFFF` | correct normalized number |
+| result `< 0010000000000000`                      | **0000000000000000 (0)**  |
+| result `> 7FEFFFFFFFFFFFFF`                      | **7FF0000000000000 (+Infinity)** |
+
 
 ### hw_vio_1
 <img width="1196" height="471" alt="Screenshot 2026-03-12 174029" src="https://github.com/user-attachments/assets/ea4ceca8-e055-4030-a509-45d85b792c79" />
