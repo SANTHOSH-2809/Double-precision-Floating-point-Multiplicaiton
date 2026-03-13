@@ -89,6 +89,8 @@ The architecture also handles special floating-point values such as NaN, Infinit
 ### hw_vio_1
 <img width="1196" height="471" alt="Screenshot 2026-03-12 174029" src="https://github.com/user-attachments/assets/ea4ceca8-e055-4030-a509-45d85b792c79" />
 
+<img width="838" height="450" alt="image" src="https://github.com/user-attachments/assets/60ea1693-dc09-43e4-9df6-cbee60961a0f" />
+
 ### Schematic
 <img width="1172" height="468" alt="image" src="https://github.com/user-attachments/assets/3f241eb7-cf8d-4226-b7cf-75886e328b5d" />
 <img width="1121" height="786" alt="image" src="https://github.com/user-attachments/assets/ec9c5f23-41a6-408e-8c77-741fc689c00f" />
@@ -106,3 +108,7 @@ The architecture also handles special floating-point values such as NaN, Infinit
 
 ### Timing
 <img width="1267" height="404" alt="image" src="https://github.com/user-attachments/assets/4a79c42c-5352-4a1a-aa5a-34b95a446eaa" />
+
+## References
+
+[IEEE-754 Converter](https://numeral-systems.com/ieee-754-converter/)
