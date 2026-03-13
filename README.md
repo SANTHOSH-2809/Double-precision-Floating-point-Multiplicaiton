@@ -110,5 +110,7 @@ The architecture also handles special floating-point values such as NaN, Infinit
 <img width="1267" height="404" alt="image" src="https://github.com/user-attachments/assets/4a79c42c-5352-4a1a-aa5a-34b95a446eaa" />
 
 ## References
+The below listed websites are used to debug our code easily according to result
+ - [IEEE-754 Converter](https://numeral-systems.com/ieee-754-converter/)
+ - [Floating Point Multiplier](https://numeral-systems.com/ieee-754-multiply/)
 
-[IEEE-754 Converter](https://numeral-systems.com/ieee-754-converter/)
