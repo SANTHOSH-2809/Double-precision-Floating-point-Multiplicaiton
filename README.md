@@ -12,18 +12,21 @@ The architecture also handles special floating-point values such as NaN, Infinit
 
 ## Project Attributes
 
-| Attribute           | Description                                                            |
-| ------------------- | ---------------------------------------------------------------------- |
-| Language            | Verilog HDL                                                            |
-| Standard            | IEEE-754 Double Precision                                              |
-| Data Width          | 64 bits                                                                |
-| Sign Bit            | 1 bit                                                                  |
-| Exponent            | 11 bits                                                                |
-| Mantissa            | 52 bits                                                                |
-| Mantissa Multiplier | 53 × 53 bit multiplication                                             |
-| Design Style        | Combinational RTL                                                      |
-| Modules             | Floating-point core logic with normalization and special-case handling |
-| Verification        | Simulation testbench with normal, edge, and special cases              |
+| Attribute             | Description                                                                                          |
+| --------------------- | ---------------------------------------------------------------------------------------------------- |
+| Language              | Verilog HDL                                                                                          |
+| Standard              | IEEE-754 Double Precision (partial compliance)                                                       |
+| Data Width            | 64 bits                                                                                              |
+| Sign Bit              | 1 bit                                                                                                |
+| Exponent              | 11 bits (bias = 1023)                                                                                |
+| Mantissa              | 52 bits (implicit leading 1 for normalized numbers)                                                  |
+| Mantissa Multiplier   | 53 × 53-bit multiplication                                                                           |
+| Design Style          | Combinational RTL                                                                                    |
+| Modules               | Floating-point multiplication core with normalization, exponent handling, and special-case detection |
+| Special Case Handling | Supports NaN, Infinity, Zero; subnormals flushed to zero                                             |
+| Rounding              | Not implemented (truncation used)                                                                    |
+| Verification          | Simulation testbench with normal, boundary, overflow, underflow, and special cases                   |
+
 
 ---
 ## Features
