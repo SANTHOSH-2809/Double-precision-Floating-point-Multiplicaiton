@@ -56,6 +56,38 @@ The architecture also handles special floating-point values such as NaN, Infinit
  - Modular design for easier debugging and extension
 
 ---
+## Overview
+This project implements a 64-bit double-precision floating-point multiplier in Verilog HDL based on the IEEE-754 standard (partial compliance). The design focuses on normalized number operations with support for special cases such as NaN, Infinity, and Zero.
+
+---
+## Features
+- 64-bit IEEE-754 double-precision format
+- 53 × 53-bit mantissa multiplication
+- Exponent bias handling (bias = 1023)
+- Normalization of mantissa
+- Special case handling:
+  - NaN
+  - Infinity
+  - Zero
+- Overflow → Infinity
+- Underflow → Zero (flush-to-zero)
+
+---
+## Limitations
+- Subnormal numbers are not supported (treated as zero)
+- Rounding is not implemented (truncation used)
+- Combinational design (no pipelining)
+
+---
+## Architecture
+The multiplier follows these steps:
+1. Field extraction (sign, exponent, mantissa)
+2. Special case detection
+3. Mantissa multiplication
+4. Exponent addition and normalization
+5. Result reconstruction
+
+---
 ## Possible Operation
 
 | Operand A      | Operand B | Result             |
