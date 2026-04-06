@@ -135,7 +135,7 @@ The multiplier follows these steps:
 
 ---
 ## Video
-[Demo video](https://drive.google.com/file/d/109JcUdwhV3lv-jsfLOvnb3OAdQbGQAIu/view?usp=sharing)
+![Demo video](https://drive.google.com/file/d/109JcUdwhV3lv-jsfLOvnb3OAdQbGQAIu/view?usp=sharing)
 
 ---
 
