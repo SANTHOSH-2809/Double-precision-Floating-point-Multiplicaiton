@@ -107,6 +107,11 @@ The multiplier follows these steps:
 | Underflow case | Any       | Zero               |
 
 ---
+## Block Diagram
+
+![Block Diagram for floating point multiplication](https://github.com/user-attachments/assets/24ef82c5-4811-432b-a6ef-9ac5539c6c9b)
+
+---
 ## Range in Magnitude
 
 | Result magnitude                                | Output                    |
